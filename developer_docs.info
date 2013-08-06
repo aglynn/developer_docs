@@ -1,0 +1,5 @@
+name = Developer Docs
+description = Document important notes on your system in centralized place so that the next developers can get up and running quickly.
+package = Developer Docs
+core = 7.x
+

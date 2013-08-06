@@ -1,0 +1,34 @@
+<?php
+
+
+function developer_docs_admin() {
+  $form = array();
+
+  $form['developer_docs_desc'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Maximum number of links'),
+    '#default_value' => variable_get('developer_docs_desc', ''),
+    '#size' => 200,
+    '#maxlength' => 2000,
+    '#description' => t("Describe the things that the next developer needs to know to get up and running quickly"),
+    '#required' => TRUE,
+  );
+
+  return system_settings_form($form);
+}
+
+function developer_docs_menu() {
+
+  $items = array();
+
+  $items['admin/settings/developer_docs'] = array(
+    'title' => 'Developer Documentation',
+    'description' => 'This page is where you centralize your Drupal system documentation',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('developer_docs_admin'),
+    'access arguments' => array('administer developer_docs settings'),
+    'type' => MENU_NORMAL_ITEM,
+   );
+
+  return $items;
+}
