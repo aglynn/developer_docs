@@ -6,10 +6,10 @@ function developer_docs_admin() {
 
   $form['developer_docs_desc'] = array(
     '#type' => 'textarea',
-    '#title' => t('Maximum number of links'),
+    '#title' => t('Notes about your system'),
     '#default_value' => variable_get('developer_docs_desc', ''),
     '#size' => 200,
-    '#maxlength' => 2000,
+    '#maxlength' => 20000,
     '#description' => t("Describe the things that the next developer needs to know to get up and running quickly"),
     '#required' => TRUE,
   );
